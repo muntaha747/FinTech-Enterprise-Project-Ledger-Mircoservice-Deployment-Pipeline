@@ -1,0 +1,145 @@
+LEDGER MICROSERVICE - DEPLOYMENT (CD) REPO NOTES
+================================================
+
+
+1. WHAT THIS REPO DOES
+----------------------
+Holds the Helm chart (mychart/), per-environment values (envs/), the Argo CD
+ApplicationSet (applicationset-ledger.yml) and the manual deploy workflow
+(.github/workflows/deploy.yml). Git is the source of truth. Argo CD syncs the
+cluster to the main branch.
+
+
+2. INSTALL TOOLS (Ubuntu)
+-------------------------
+# kubectl
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+chmod +x ./kubectl && sudo mv ./kubectl /usr/local/bin/kubectl
+kubectl version --client
+
+# helm
+curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+helm version
+
+# AWS CLI v2
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+sudo apt install -y unzip && unzip awscliv2.zip
+sudo ./aws/install --bin-dir /usr/bin --install-dir /usr/bin/aws-cli --update
+aws --version
+
+# Sign in to AWS (pick one)
+aws login
+aws configure
+
+
+3. CLONE AND CHECK THE CHART
+----------------------------
+git clone https://github.com/muntaha747/FinTech-Enterprise-Project-Ledger-Mircoservice-Deployment-Pipeline.git
+cd FinTech-Enterprise-Project-Ledger-Mircoservice-Deployment-Pipeline
+helm lint mychart
+helm template test mychart -f envs/uat/values.yaml        # render the YAML locally
+helm template test mychart -f envs/uat/values.yaml | less
+
+
+4. CHART FILES
+--------------
+mychart/Chart.yaml            name, chart version (0.1.0), appVersion (fallback image tag)
+mychart/values.yaml           defaults: image repository and tag, replicas, resources, scheduling
+mychart/templates/deployledger.yml   the Deployment (reads values with {{ .Values... }})
+mychart/templates/_helpers.tpl       named helpers: fullname, labels, selector labels
+envs/<env>/values.yaml        per-env override of the image tag (functional, integration,
+                              regression, uat, release)
+
+Helm merge order: chart defaults -> env values file -> --set flags (last one wins).
+
+
+5. ARGO CD SETUP (on the cluster)
+---------------------------------
+kubectl create namespace argocd
+kubectl apply -n argocd --server-side --force-conflicts -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+kubectl get crd applicationsets.argoproj.io
+kubectl get pods -n argocd -l app.kubernetes.io/name=argocd-applicationset-controller
+
+# Expose the UI on NodePort 32000
+kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "NodePort"}}'
+kubectl edit svc argocd-server -n argocd          # set nodePort to 32000
+
+# Initial admin password
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d && echo
+
+# Add the GitHub repo credentials in Argo CD settings, then:
+kubectl apply -f applicationset-ledger.yml
+
+The ApplicationSet creates one Argo CD app per folder under envs/* (functional,
+integration, regression, uat, release). Each app uses path mychart and namespace = env name.
+
+
+6. OBJECTS THE CHART NEEDS IN EACH NAMESPACE
+--------------------------------------------
+The chart does not create these. They must already exist in the target namespace:
+  <release>-mysql-creds        Secret with keys: username, password
+  <release>-mysql-svc          Service for MySQL (init container waits for it)
+  awsecr-cred                  image pull secret for ECR
+  <release>-wezvaledgerapp     ConfigMap with application.properties
+
+Create a pull secret example:
+kubectl create secret docker-registry awsecr-cred -n <env> \
+  --docker-server=747240980649.dkr.ecr.us-east-1.amazonaws.com \
+  --docker-username=AWS --docker-password="$(aws ecr get-login-password --region us-east-1)"
+
+
+7. DEPLOY PROCESS
+-----------------
+Feature branch (CI on push) -> fb<N> image -> functional and integration envs.
+Main branch (CI on merge)   -> rel<N> image -> regression, uat, release envs.
+
+Manual deploy: GitHub Actions > "CD Pipeline" > Run workflow
+  ECRURL   : 747240980649.dkr.ecr.us-east-1.amazonaws.com/
+  REPO     : fintech-ledgerservice
+  IMAGE    : tag, for example rel17 or fb16
+  TEST     : functional | integration | regression | uat | release
+The workflow updates envs/<TEST>/values.yaml and commits to main. Argo CD then deploys.
+
+
+8. CHECK THE DEPLOYMENT
+-----------------------
+kubectl get applications -n argocd
+kubectl get pods -n <env> -o wide
+kubectl describe pod <pod> -n <env>
+kubectl logs -f <pod> -n <env>
+kubectl rollout status deploy/<release>-wezvaledgerapp -n <env>
+kubectl rollout history deploy/<release>-wezvaledgerapp -n <env>
+kubectl rollout undo deploy/<release>-wezvaledgerapp -n <env> --to-revision=<n>
+
+Rollback in Git: set envs/<env>/values.yaml back to the previous tag and push.
+Argo CD then rolls the pods back.
+
+
+9. KUBERNETES CHEAT SHEET
+-------------------------
+Pod         one or more containers sharing IP and storage. Does not recreate itself.
+Deployment  manages a ReplicaSet; gives scale, recreate, rollback. Stateless apps.
+StatefulSet stateful apps (databases). DaemonSet one pod per node (agents).
+Service     stable address for pods. ClusterIP, NodePort (30000-32767), LoadBalancer.
+ConfigMap   configuration files. Secret: sensitive data (max 1 MB).
+Namespace   groups objects and holds policies.
+
+Pod checklist: image, command, resources (requests/limits), liveness probe,
+readiness probe, env and secretKeyRef, ports, volumes, init container, sidecar,
+nodeSelector, tolerations, affinity.
+
+Node commands:
+kubectl get nodes
+kubectl label nodes <node> mynode=demonode
+kubectl taint nodes <node> taint=true:NoSchedule
+kubectl taint nodes <node> taint=true:NoSchedule-        # remove taint
+kubectl cordon <node>
+kubectl drain <node> --ignore-daemonsets --delete-emptydir-data
+
+
+10. RESPONSIBILITIES
+--------------------
+- Understand the release process and where each test runs.
+- Containerize the app and package it as a Helm chart.
+- Keep env values files consistent with the ECR repo and the CI tags.
+- Set up the deployment pipeline and continuous delivery.
