@@ -6,15 +6,15 @@ on:
       ECRURL:
         description: "ECR Registry URL (with / at end)"
         required: true
-        default: "081654307023.dkr.ecr.ap-south-1.amazonaws.com/"
+        default: "747240980649.dkr.ecr.us-east-1.amazonaws.com/"
       REPO:
         description: "Repository Name"
         required: true
-        default: "wezvatechledger"
+        default: "fintech-ledgerservice"
       IMAGE:
         description: "Image Tag"
         required: true
-        default: "rel28"
+        default: "rel17"
       TEST:
         description: "Environment"
         required: true
