@@ -38,7 +38,7 @@ jobs:
       - name: Checkout Deployment Repo
         uses: actions/checkout@v4
         with:
-          repository: wezva-fintech/ledger-deployment
+          repository: FinTech-Enterprise-Project-Ledger-Mircoservice-Deployment-Pipeline
           ref: main
           token: ${{ secrets.GH_PAT }}
 
@@ -63,9 +63,8 @@ jobs:
       # -----------------------------
       - name: Commit and Push
         run: |
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
-
+          git config user.name "muntaha747"
+          git config user.email "muntaha747@gmail.com"
           git add .
           git commit -m "New deployment for Build ${{ inputs.IMAGE }}" || echo "No changes to commit"
 
