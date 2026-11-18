@@ -1,6 +1,10 @@
 name: CD Pipeline
 
 on:
+  push:
+    branches:
+      - feature
+      - main
   workflow_dispatch:
     inputs:
       ECRURL:
@@ -14,7 +18,7 @@ on:
       IMAGE:
         description: "Image Tag"
         required: true
-        default: "rel17"
+        default: "fb18"
       TEST:
         description: "Environment"
         required: true
