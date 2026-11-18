@@ -1,7 +1,6 @@
 wezvaledgerapp:
   wezvaledgerapp:
     image:
-      image: 747240980649.dkr.ecr.us-east-1.amazonaws.com/fintech-ledgerservice
       tag: fb16
 ledgerSvc:
   ports:

@@ -37,8 +37,8 @@ wezvaledgerapp:
   topologySpreadConstraints: []
   wezvaledgerapp:
     image:
-      repository:  FinTech-Enterprise-Project-Ledger-Mircoservice-Deployment-Pipeline
-      tag: fb1
+      repository: 747240980649.dkr.ecr.us-east-1.amazonaws.com/fintech-ledgerservice
+      tag: fb16
     imagePullPolicy: IfNotPresent
     resources:
       limits:

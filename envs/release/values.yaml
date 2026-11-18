@@ -1,8 +1,7 @@
 wezvaledgerapp:
   wezvaledgerapp:
     image:
-      image: 747240980649.dkr.ecr.us-east-1.amazonaws.com/fintech-ledgerservice
-      tag: rel5
+      tag: rel17
 ledgerSvc:
   ports:
   - nodePort: 30000
