@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" width="100%" role="img" aria-label="CI to CD Handoff">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2a0845"/><stop offset="0.5" stop-color="#0b2a6f"/><stop offset="1" stop-color="#004d40"/></linearGradient>
+<linearGradient id="ttl" x1="0" x2="1"><stop offset="0" stop-color="#ff2d95"/><stop offset="0.5" stop-color="#ffe600"/><stop offset="1" stop-color="#00e5ff"/></linearGradient>
+<filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="1200" height="380" rx="22" fill="url(#bg)"/>
+<text x="600.0" y="50.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="30" font-weight="800" fill="url(#ttl)" text-anchor="middle">CI to CD Handoff</text>
+<text x="600.0" y="80.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="15" font-weight="500" fill="#e0f2fe" text-anchor="middle">What happens after the build: CI produces an image, the deployment repo records it, Argo CD deploys it</text>
+<rect x="55" y="150" width="165" height="150" rx="14" fill="#0b1224" stroke="#00e5ff" stroke-width="3" filter="url(#glow)"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="2.2s" repeatCount="indefinite"/></rect>
+<rect x="55" y="150" width="165" height="34" rx="12" fill="#00e5ff"/>
+<text x="137.5" y="173.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="14" font-weight="800" fill="#0b1224" text-anchor="middle">Push / merge</text>
+<text x="67.0" y="206.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#f8fafc" text-anchor="start">feature/* → dev</text>
+<text x="67.0" y="225.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#f8fafc" text-anchor="start">main → qa · stage</text>
+<path d="M 220 225 L 240 225" fill="none" stroke="#00e5ff" stroke-width="3" stroke-linecap="round" stroke-dasharray="10 6"><animate attributeName="stroke-dashoffset" from="0" to="-32" dur="1s" repeatCount="indefinite"/></path>
+<polygon points="240,225 228.0,231.0 228.0,219.0" fill="#00e5ff"/>
+<circle r="5" fill="#ffffff" stroke="#00e5ff" stroke-width="2"><animateMotion dur="2.4s" repeatCount="indefinite" path="M 220 225 L 240 225"/></circle>
+<rect x="240" y="150" width="165" height="150" rx="14" fill="#0b1224" stroke="#ffe600" stroke-width="3" filter="url(#glow)"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="2.5s" repeatCount="indefinite"/></rect>
+<rect x="240" y="150" width="165" height="34" rx="12" fill="#ffe600"/>
+<text x="322.5" y="173.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="14" font-weight="800" fill="#0b1224" text-anchor="middle">CI build 1–7</text>
+<text x="252.0" y="206.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#f8fafc" text-anchor="start">Maven · JaCoCo</text>
+<text x="252.0" y="225.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#f8fafc" text-anchor="start">Trivy · SonarQube</text>
+<text x="252.0" y="244.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#f8fafc" text-anchor="start">Docker · ECR scan</text>
+<path d="M 405 225 L 425 225" fill="none" stroke="#ffe600" stroke-width="3" stroke-linecap="round" stroke-dasharray="10 6"><animate attributeName="stroke-dashoffset" from="0" to="-32" dur="1s" repeatCount="indefinite"/></path>
+<polygon points="425,225 413.0,231.0 413.0,219.0" fill="#ffe600"/>
+<circle r="5" fill="#ffffff" stroke="#ffe600" stroke-width="2"><animateMotion dur="2.4s" repeatCount="indefinite" path="M 405 225 L 425 225"/></circle>
+<rect x="425" y="150" width="165" height="150" rx="14" fill="#0b1224" stroke="#2979ff" stroke-width="3" filter="url(#glow)"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="2.8000000000000003s" repeatCount="indefinite"/></rect>
+<rect x="425" y="150" width="165" height="34" rx="12" fill="#2979ff"/>
+<text x="507.5" y="173.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="14" font-weight="800" fill="#0b1224" text-anchor="middle">Image rel&lt;N&gt;</text>
+<text x="437.0" y="206.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#f8fafc" text-anchor="start">tag = run number</text>
+<text x="437.0" y="225.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#f8fafc" text-anchor="start">stored in ECR</text>
+<path d="M 590 225 L 610 225" fill="none" stroke="#2979ff" stroke-width="3" stroke-linecap="round" stroke-dasharray="10 6"><animate attributeName="stroke-dashoffset" from="0" to="-32" dur="1s" repeatCount="indefinite"/></path>
+<polygon points="610,225 598.0,231.0 598.0,219.0" fill="#2979ff"/>
+<circle r="5" fill="#ffffff" stroke="#2979ff" stroke-width="2"><animateMotion dur="2.4s" repeatCount="indefinite" path="M 590 225 L 610 225"/></circle>
+<rect x="610" y="150" width="165" height="150" rx="14" fill="#0b1224" stroke="#ff9f1c" stroke-width="3" filter="url(#glow)"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="3.1s" repeatCount="indefinite"/></rect>
+<rect x="610" y="150" width="165" height="34" rx="12" fill="#ff9f1c"/>
+<text x="692.5" y="173.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="14" font-weight="800" fill="#0b1224" text-anchor="middle">Update values</text>
+<text x="622.0" y="206.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#f8fafc" text-anchor="start">CD sets tag: rel&lt;N&gt;</text>
+<text x="622.0" y="225.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#f8fafc" text-anchor="start">in envs/&lt;env&gt;/</text>
+<path d="M 775 225 L 795 225" fill="none" stroke="#ff9f1c" stroke-width="3" stroke-linecap="round" stroke-dasharray="10 6"><animate attributeName="stroke-dashoffset" from="0" to="-32" dur="1s" repeatCount="indefinite"/></path>
+<polygon points="795,225 783.0,231.0 783.0,219.0" fill="#ff9f1c"/>
+<circle r="5" fill="#ffffff" stroke="#ff9f1c" stroke-width="2"><animateMotion dur="2.4s" repeatCount="indefinite" path="M 775 225 L 795 225"/></circle>
+<rect x="795" y="150" width="165" height="150" rx="14" fill="#0b1224" stroke="#ff2d95" stroke-width="3" filter="url(#glow)"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="3.4000000000000004s" repeatCount="indefinite"/></rect>
+<rect x="795" y="150" width="165" height="34" rx="12" fill="#ff2d95"/>
+<text x="877.5" y="173.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="14" font-weight="800" fill="#0b1224" text-anchor="middle">Commit to Git</text>
+<text x="807.0" y="206.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#f8fafc" text-anchor="start">deployment repo</text>
+<text x="807.0" y="225.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#f8fafc" text-anchor="start">main branch</text>
+<path d="M 960 225 L 980 225" fill="none" stroke="#ff2d95" stroke-width="3" stroke-linecap="round" stroke-dasharray="10 6"><animate attributeName="stroke-dashoffset" from="0" to="-32" dur="1s" repeatCount="indefinite"/></path>
+<polygon points="980,225 968.0,231.0 968.0,219.0" fill="#ff2d95"/>
+<circle r="5" fill="#ffffff" stroke="#ff2d95" stroke-width="2"><animateMotion dur="2.4s" repeatCount="indefinite" path="M 960 225 L 980 225"/></circle>
+<rect x="980" y="150" width="165" height="150" rx="14" fill="#0b1224" stroke="#39ff14" stroke-width="3" filter="url(#glow)"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="3.7s" repeatCount="indefinite"/></rect>
+<rect x="980" y="150" width="165" height="34" rx="12" fill="#39ff14"/>
+<text x="1062.5" y="173.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="14" font-weight="800" fill="#0b1224" text-anchor="middle">Argo CD sync</text>
+<text x="992.0" y="206.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#f8fafc" text-anchor="start">renders Helm</text>
+<text x="992.0" y="225.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#f8fafc" text-anchor="start">applies to cluster</text>
+<text x="600.0" y="345.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#ffe600" text-anchor="middle">Each CI run produces one new image tag. The CD step only writes that tag into Git.</text>
+</svg>

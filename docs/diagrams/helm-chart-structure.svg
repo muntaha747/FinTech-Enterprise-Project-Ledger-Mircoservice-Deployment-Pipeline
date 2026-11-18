@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="100%" role="img" aria-label="Helm Chart Structure">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2a0845"/><stop offset="0.5" stop-color="#0b2a6f"/><stop offset="1" stop-color="#004d40"/></linearGradient>
+<linearGradient id="ttl" x1="0" x2="1"><stop offset="0" stop-color="#ff2d95"/><stop offset="0.5" stop-color="#ffe600"/><stop offset="1" stop-color="#00e5ff"/></linearGradient>
+<filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="1200" height="560" rx="22" fill="url(#bg)"/>
+<text x="600.0" y="50.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="30" font-weight="800" fill="url(#ttl)" text-anchor="middle">Helm Chart Structure</text>
+<text x="600.0" y="80.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="15" font-weight="500" fill="#e0f2fe" text-anchor="middle">One chart, many environments: the chart is the template, env values are the overrides</text>
+<rect x="30" y="150" width="360" height="190" rx="14" fill="#0b1224" stroke="#00e5ff" stroke-width="3" filter="url(#glow)"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="2.4s" repeatCount="indefinite"/></rect>
+<rect x="30" y="150" width="360" height="34" rx="12" fill="#00e5ff"/>
+<text x="210.0" y="173.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="14" font-weight="800" fill="#0b1224" text-anchor="middle">mychart/  (Helm chart)</text>
+<text x="42.0" y="206.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#f8fafc" text-anchor="start">Chart.yaml · name &amp; version</text>
+<text x="42.0" y="225.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#f8fafc" text-anchor="start">values.yaml · default values</text>
+<text x="42.0" y="244.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#f8fafc" text-anchor="start">templates/_helpers.tpl · names &amp; labels</text>
+<text x="42.0" y="263.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#f8fafc" text-anchor="start">templates/deployledger.yml · app Deployment</text>
+<text x="42.0" y="282.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#f8fafc" text-anchor="start">.helmignore · files to skip</text>
+<rect x="430" y="150" width="340" height="190" rx="14" fill="#0b1224" stroke="#ffe600" stroke-width="3" filter="url(#glow)"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="2.6s" repeatCount="indefinite"/></rect>
+<rect x="430" y="150" width="340" height="34" rx="12" fill="#ffe600"/>
+<text x="600.0" y="173.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="14" font-weight="800" fill="#0b1224" text-anchor="middle">envs/&lt;env&gt;/values.yaml</text>
+<text x="442.0" y="206.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#f8fafc" text-anchor="start">image tag · set by CD on every deploy</text>
+<text x="442.0" y="225.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#f8fafc" text-anchor="start">service NodePort · per environment</text>
+<text x="442.0" y="244.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#f8fafc" text-anchor="start">DB name &amp; credentials · per environment</text>
+<text x="442.0" y="263.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#f8fafc" text-anchor="start">overrides only what differs</text>
+<rect x="830" y="150" width="340" height="190" rx="14" fill="#0b1224" stroke="#39ff14" stroke-width="3" filter="url(#glow)"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="2.8s" repeatCount="indefinite"/></rect>
+<rect x="830" y="150" width="340" height="34" rx="12" fill="#39ff14"/>
+<text x="1000.0" y="173.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="14" font-weight="800" fill="#0b1224" text-anchor="middle">Rendered manifests</text>
+<text x="842.0" y="206.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#f8fafc" text-anchor="start">Deployment · app pods (replicas)</text>
+<text x="842.0" y="225.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#f8fafc" text-anchor="start">+ Services, Secrets, ConfigMaps</text>
+<text x="842.0" y="244.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#f8fafc" text-anchor="start">  as templates are added to the chart</text>
+<text x="842.0" y="263.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#f8fafc" text-anchor="start">applied to the cluster by Argo CD</text>
+<path d="M 390 245 L 430 245" fill="none" stroke="#00e5ff" stroke-width="3" stroke-linecap="round" stroke-dasharray="10 6"><animate attributeName="stroke-dashoffset" from="0" to="-32" dur="1s" repeatCount="indefinite"/></path>
+<polygon points="430,245 418.0,251.0 418.0,239.0" fill="#00e5ff"/>
+<circle r="5" fill="#ffffff" stroke="#00e5ff" stroke-width="2"><animateMotion dur="2.4s" repeatCount="indefinite" path="M 390 245 L 430 245"/></circle>
+<path d="M 770 245 L 830 245" fill="none" stroke="#39ff14" stroke-width="3" stroke-linecap="round" stroke-dasharray="10 6"><animate attributeName="stroke-dashoffset" from="0" to="-32" dur="1s" repeatCount="indefinite"/></path>
+<polygon points="830,245 818.0,251.0 818.0,239.0" fill="#39ff14"/>
+<circle r="5" fill="#ffffff" stroke="#39ff14" stroke-width="2"><animateMotion dur="2.4s" repeatCount="indefinite" path="M 770 245 L 830 245"/></circle>
+<rect x="392" y="118" width="28" height="24" rx="12" fill="#ff2d95"/>
+<text x="406.0" y="134.5" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12" font-weight="800" fill="#0b1224" text-anchor="middle">+</text>
+<rect x="30" y="380" width="1140" height="120" rx="14" fill="#0b1224" stroke="#ff2d95" stroke-width="3" filter="url(#glow)"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="2.6s" repeatCount="indefinite"/></rect>
+<rect x="30" y="380" width="1140" height="34" rx="12" fill="#ff2d95"/>
+<text x="600.0" y="403.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="14" font-weight="800" fill="#0b1224" text-anchor="middle">How Helm combines them</text>
+<text x="50.0" y="440.0" font-family="Consolas,Menlo,monospace" font-size="14" font-weight="700" fill="#39ff14" text-anchor="start">helm template ledger ./mychart -f envs/&lt;env&gt;/values.yaml</text>
+<text x="50.0" y="466.0" font-family="Consolas,Menlo,monospace" font-size="13" font-weight="500" fill="#00e5ff" text-anchor="start">helm lint ./mychart          # check the chart before it is committed</text>
+</svg>

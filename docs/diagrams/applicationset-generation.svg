@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 580" width="100%" role="img" aria-label="ApplicationSet Generation">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2a0845"/><stop offset="0.5" stop-color="#0b2a6f"/><stop offset="1" stop-color="#004d40"/></linearGradient>
+<linearGradient id="ttl" x1="0" x2="1"><stop offset="0" stop-color="#ff2d95"/><stop offset="0.5" stop-color="#ffe600"/><stop offset="1" stop-color="#00e5ff"/></linearGradient>
+<filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="1200" height="580" rx="22" fill="url(#bg)"/>
+<text x="600.0" y="50.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="30" font-weight="800" fill="url(#ttl)" text-anchor="middle">ApplicationSet Generation</text>
+<text x="600.0" y="80.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="15" font-weight="500" fill="#e0f2fe" text-anchor="middle">One Git folder in envs/ becomes one Argo CD application and one namespace</text>
+<rect x="30" y="200" width="300" height="170" rx="14" fill="#0b1224" stroke="#b388ff" stroke-width="3" filter="url(#glow)"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="2.5s" repeatCount="indefinite"/></rect>
+<rect x="30" y="200" width="300" height="34" rx="12" fill="#b388ff"/>
+<text x="180.0" y="223.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="14" font-weight="800" fill="#0b1224" text-anchor="middle">ApplicationSet · ledger</text>
+<text x="42.0" y="256.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#f8fafc" text-anchor="start">generator: git directories</text>
+<text x="42.0" y="275.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#f8fafc" text-anchor="start">pattern: envs/*</text>
+<text x="42.0" y="294.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#f8fafc" text-anchor="start">one Argo CD app per folder</text>
+<text x="42.0" y="313.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#f8fafc" text-anchor="start">source: mychart · main</text>
+<rect x="520" y="105" width="300" height="66" rx="14" fill="#0b1224" stroke="#00e5ff" stroke-width="3" filter="url(#glow)"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="2.2s" repeatCount="indefinite"/></rect>
+<rect x="520" y="105" width="300" height="34" rx="12" fill="#00e5ff"/>
+<text x="670.0" y="128.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="14" font-weight="800" fill="#0b1224" text-anchor="middle">functional-ledger</text>
+<text x="532.0" y="161.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#f8fafc" text-anchor="start">ns: functional  ·  values: envs/functional</text>
+<path d="M 330 285 L 425 285 L 425 138 L 520 138" fill="none" stroke="#00e5ff" stroke-width="3" stroke-linecap="round" stroke-dasharray="10 6"><animate attributeName="stroke-dashoffset" from="0" to="-32" dur="1s" repeatCount="indefinite"/></path>
+<polygon points="520,138 508.0,144.0 508.0,132.0" fill="#00e5ff"/>
+<circle r="5" fill="#ffffff" stroke="#00e5ff" stroke-width="2"><animateMotion dur="3s" repeatCount="indefinite" path="M 330 285 L 425 285 L 425 138 L 520 138"/></circle>
+<rect x="850" y="126" width="186" height="24" rx="12" fill="#00e5ff"/>
+<text x="943.0" y="142.5" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12" font-weight="800" fill="#0b1224" text-anchor="middle">auto · prune · self-heal</text>
+<rect x="520" y="187" width="300" height="66" rx="14" fill="#0b1224" stroke="#ffe600" stroke-width="3" filter="url(#glow)"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="2.5s" repeatCount="indefinite"/></rect>
+<rect x="520" y="187" width="300" height="34" rx="12" fill="#ffe600"/>
+<text x="670.0" y="210.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="14" font-weight="800" fill="#0b1224" text-anchor="middle">integration-ledger</text>
+<text x="532.0" y="243.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#f8fafc" text-anchor="start">ns: integration  ·  values: envs/integration</text>
+<path d="M 330 285 L 425 285 L 425 220 L 520 220" fill="none" stroke="#ffe600" stroke-width="3" stroke-linecap="round" stroke-dasharray="10 6"><animate attributeName="stroke-dashoffset" from="0" to="-32" dur="1s" repeatCount="indefinite"/></path>
+<polygon points="520,220 508.0,226.0 508.0,214.0" fill="#ffe600"/>
+<circle r="5" fill="#ffffff" stroke="#ffe600" stroke-width="2"><animateMotion dur="3s" repeatCount="indefinite" path="M 330 285 L 425 285 L 425 220 L 520 220"/></circle>
+<rect x="850" y="208" width="186" height="24" rx="12" fill="#ffe600"/>
+<text x="943.0" y="224.5" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12" font-weight="800" fill="#0b1224" text-anchor="middle">auto · prune · self-heal</text>
+<rect x="520" y="269" width="300" height="66" rx="14" fill="#0b1224" stroke="#ff9f1c" stroke-width="3" filter="url(#glow)"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="2.8000000000000003s" repeatCount="indefinite"/></rect>
+<rect x="520" y="269" width="300" height="34" rx="12" fill="#ff9f1c"/>
+<text x="670.0" y="292.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="14" font-weight="800" fill="#0b1224" text-anchor="middle">regression-ledger</text>
+<text x="532.0" y="325.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#f8fafc" text-anchor="start">ns: regression  ·  values: envs/regression</text>
+<path d="M 330 285 L 425 285 L 425 302 L 520 302" fill="none" stroke="#ff9f1c" stroke-width="3" stroke-linecap="round" stroke-dasharray="10 6"><animate attributeName="stroke-dashoffset" from="0" to="-32" dur="1s" repeatCount="indefinite"/></path>
+<polygon points="520,302 508.0,308.0 508.0,296.0" fill="#ff9f1c"/>
+<circle r="5" fill="#ffffff" stroke="#ff9f1c" stroke-width="2"><animateMotion dur="3s" repeatCount="indefinite" path="M 330 285 L 425 285 L 425 302 L 520 302"/></circle>
+<rect x="850" y="290" width="186" height="24" rx="12" fill="#ff9f1c"/>
+<text x="943.0" y="306.5" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12" font-weight="800" fill="#0b1224" text-anchor="middle">auto · prune · self-heal</text>
+<rect x="520" y="351" width="300" height="66" rx="14" fill="#0b1224" stroke="#39ff14" stroke-width="3" filter="url(#glow)"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="3.1s" repeatCount="indefinite"/></rect>
+<rect x="520" y="351" width="300" height="34" rx="12" fill="#39ff14"/>
+<text x="670.0" y="374.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="14" font-weight="800" fill="#0b1224" text-anchor="middle">uat-ledger</text>
+<text x="532.0" y="407.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#f8fafc" text-anchor="start">ns: uat  ·  values: envs/uat</text>
+<path d="M 330 285 L 425 285 L 425 384 L 520 384" fill="none" stroke="#39ff14" stroke-width="3" stroke-linecap="round" stroke-dasharray="10 6"><animate attributeName="stroke-dashoffset" from="0" to="-32" dur="1s" repeatCount="indefinite"/></path>
+<polygon points="520,384 508.0,390.0 508.0,378.0" fill="#39ff14"/>
+<circle r="5" fill="#ffffff" stroke="#39ff14" stroke-width="2"><animateMotion dur="3s" repeatCount="indefinite" path="M 330 285 L 425 285 L 425 384 L 520 384"/></circle>
+<rect x="850" y="372" width="186" height="24" rx="12" fill="#39ff14"/>
+<text x="943.0" y="388.5" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12" font-weight="800" fill="#0b1224" text-anchor="middle">auto · prune · self-heal</text>
+<rect x="520" y="433" width="300" height="66" rx="14" fill="#0b1224" stroke="#ff2d95" stroke-width="3" filter="url(#glow)"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="3.4000000000000004s" repeatCount="indefinite"/></rect>
+<rect x="520" y="433" width="300" height="34" rx="12" fill="#ff2d95"/>
+<text x="670.0" y="456.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="14" font-weight="800" fill="#0b1224" text-anchor="middle">release-ledger</text>
+<text x="532.0" y="489.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#f8fafc" text-anchor="start">ns: release  ·  values: envs/release</text>
+<path d="M 330 285 L 425 285 L 425 466 L 520 466" fill="none" stroke="#ff2d95" stroke-width="3" stroke-linecap="round" stroke-dasharray="10 6"><animate attributeName="stroke-dashoffset" from="0" to="-32" dur="1s" repeatCount="indefinite"/></path>
+<polygon points="520,466 508.0,472.0 508.0,460.0" fill="#ff2d95"/>
+<circle r="5" fill="#ffffff" stroke="#ff2d95" stroke-width="2"><animateMotion dur="3s" repeatCount="indefinite" path="M 330 285 L 425 285 L 425 466 L 520 466"/></circle>
+<rect x="850" y="454" width="186" height="24" rx="12" fill="#ff2d95"/>
+<text x="943.0" y="470.5" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12" font-weight="800" fill="#0b1224" text-anchor="middle">auto · prune · self-heal</text>
+<text x="600.0" y="540.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#ffe600" text-anchor="middle">Add an envs/&lt;name&gt;/ folder and Argo CD creates the app and namespace automatically.</text>
+</svg>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 610" width="100%" role="img" aria-label="CD Workflow: deploy.yml">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2a0845"/><stop offset="0.5" stop-color="#0b2a6f"/><stop offset="1" stop-color="#004d40"/></linearGradient>
+<linearGradient id="ttl" x1="0" x2="1"><stop offset="0" stop-color="#ff2d95"/><stop offset="0.5" stop-color="#ffe600"/><stop offset="1" stop-color="#00e5ff"/></linearGradient>
+<filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="1200" height="610" rx="22" fill="url(#bg)"/>
+<text x="600.0" y="50.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="30" font-weight="800" fill="url(#ttl)" text-anchor="middle">CD Workflow: deploy.yml</text>
+<text x="600.0" y="80.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="15" font-weight="500" fill="#e0f2fe" text-anchor="middle">Manual trigger · guarded to main · edits one env folder · commits to main</text>
+<rect x="30" y="150" width="300" height="190" rx="14" fill="#0b1224" stroke="#00e5ff" stroke-width="3" filter="url(#glow)"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="2.4s" repeatCount="indefinite"/></rect>
+<rect x="30" y="150" width="300" height="34" rx="12" fill="#00e5ff"/>
+<text x="180.0" y="173.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="14" font-weight="800" fill="#0b1224" text-anchor="middle">Workflow inputs</text>
+<text x="42.0" y="206.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#f8fafc" text-anchor="start">ECRURL   registry URL</text>
+<text x="42.0" y="225.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#f8fafc" text-anchor="start">REPO     repository name</text>
+<text x="42.0" y="244.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#f8fafc" text-anchor="start">IMAGE    tag, e.g. rel54</text>
+<text x="42.0" y="263.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#f8fafc" text-anchor="start">TEST     env folder (choice)</text>
+<rect x="400" y="150" width="740" height="80" rx="14" fill="#0b1224" stroke="#00e5ff" stroke-width="3" filter="url(#glow)"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="2.3s" repeatCount="indefinite"/></rect>
+<rect x="400" y="150" width="740" height="34" rx="12" fill="#00e5ff"/>
+<text x="770.0" y="173.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="14" font-weight="800" fill="#0b1224" text-anchor="middle">1 · Guard</text>
+<text x="412.0" y="206.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#f8fafc" text-anchor="start">runs only when the ref is main</text>
+<path d="M 770 230 L 770 250" fill="none" stroke="#00e5ff" stroke-width="3" stroke-linecap="round" stroke-dasharray="10 6"><animate attributeName="stroke-dashoffset" from="0" to="-32" dur="1s" repeatCount="indefinite"/></path>
+<polygon points="770,250 764.0,238.0 776.0,238.0" fill="#00e5ff"/>
+<rect x="400" y="250" width="740" height="80" rx="14" fill="#0b1224" stroke="#ffe600" stroke-width="3" filter="url(#glow)"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="2.55s" repeatCount="indefinite"/></rect>
+<rect x="400" y="250" width="740" height="34" rx="12" fill="#ffe600"/>
+<text x="770.0" y="273.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="14" font-weight="800" fill="#0b1224" text-anchor="middle">2 · Checkout deployment repo</text>
+<text x="412.0" y="306.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#f8fafc" text-anchor="start">actions/checkout with the GH_PAT secret</text>
+<path d="M 770 330 L 770 350" fill="none" stroke="#ffe600" stroke-width="3" stroke-linecap="round" stroke-dasharray="10 6"><animate attributeName="stroke-dashoffset" from="0" to="-32" dur="1s" repeatCount="indefinite"/></path>
+<polygon points="770,350 764.0,338.0 776.0,338.0" fill="#ffe600"/>
+<rect x="400" y="350" width="740" height="80" rx="14" fill="#0b1224" stroke="#ff9f1c" stroke-width="3" filter="url(#glow)"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="2.8s" repeatCount="indefinite"/></rect>
+<rect x="400" y="350" width="740" height="34" rx="12" fill="#ff9f1c"/>
+<text x="770.0" y="373.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="14" font-weight="800" fill="#0b1224" text-anchor="middle">3 · Update envs/&lt;TEST&gt;/values.yaml</text>
+<text x="412.0" y="406.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#f8fafc" text-anchor="start">sed rewrites the tag: line to IMAGE</text>
+<path d="M 770 430 L 770 450" fill="none" stroke="#ff9f1c" stroke-width="3" stroke-linecap="round" stroke-dasharray="10 6"><animate attributeName="stroke-dashoffset" from="0" to="-32" dur="1s" repeatCount="indefinite"/></path>
+<polygon points="770,450 764.0,438.0 776.0,438.0" fill="#ff9f1c"/>
+<rect x="400" y="450" width="740" height="80" rx="14" fill="#0b1224" stroke="#ff2d95" stroke-width="3" filter="url(#glow)"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="3.05s" repeatCount="indefinite"/></rect>
+<rect x="400" y="450" width="740" height="34" rx="12" fill="#ff2d95"/>
+<text x="770.0" y="473.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="14" font-weight="800" fill="#0b1224" text-anchor="middle">4 · Commit &amp; push to main</text>
+<text x="412.0" y="506.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="12.5" font-weight="500" fill="#f8fafc" text-anchor="start">bot commit · Argo CD detects the new Git state</text>
+<path d="M 330 245 L 365 245 L 365 190 L 400 190" fill="none" stroke="#00e5ff" stroke-width="3" stroke-linecap="round" stroke-dasharray="10 6"><animate attributeName="stroke-dashoffset" from="0" to="-32" dur="1s" repeatCount="indefinite"/></path>
+<polygon points="400,190 388.0,196.0 388.0,184.0" fill="#00e5ff"/>
+<circle r="5" fill="#ffffff" stroke="#00e5ff" stroke-width="2"><animateMotion dur="2.4s" repeatCount="indefinite" path="M 330 245 L 365 245 L 365 190 L 400 190"/></circle>
+<text x="600.0" y="580.0" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="14" font-weight="600" fill="#ffe600" text-anchor="middle">Result: the tag in Git changes. Argo CD (auto-sync on for that env) rolls the new image out.</text>
+</svg>
