@@ -286,3 +286,132 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 <p align="center">
   <b>🔁 Commit a new tag · 🤖 Argo CD syncs it · ✅ Git stays the truth</b>
 </p>
+
+---
+
+## 📚 Class Notes: Deployment, Helm, Kubernetes and Argo CD (Ledger CD repo)
+
+This section holds the class notes that apply to this deployment repo.
+
+### Deployment lifecycle
+
+- **Continuous Development (Dev)** → **Continuous Integration (CI)** → **Continuous Deployment (CD)** → **Continuous Testing (QA)**.
+- **Feature branch:** code and unit test → build → deploy to QA → functional test.
+- **Main branch:** merge from feature → build → deploy to QA → integration and regression tests → deploy to Stage → UAT → deploy to Prod → release.
+- **Pipelines:** one build pipeline for the feature branch (on push) and one for `main` (on pull request). One deployment pipeline for QA and one for Stage and Prod.
+
+### Why GitOps with Argo CD
+
+Traditional CI/CD has four problems:
+
+1. The build pipeline can reach the production cluster.
+2. Redeployment is not possible.
+3. Multiple deployments are not possible.
+4. Deployments are not visible.
+
+GitOps fixes these. Git is the single source of truth. The CI pipeline only changes Git (the image tag in an environment's values file). Argo CD watches the repo and makes the cluster match it. Nothing is changed on the cluster by hand.
+
+### Helm
+
+Helm packages Kubernetes YAML as a **chart**. Templates are the YAML files with placeholders. Values fill in the placeholders, so one chart serves all environments.
+
+| File | What it does in this repo |
+|---|---|
+| `mychart/Chart.yaml` | Chart name, chart version (`0.1.0`), and `appVersion`. `appVersion` is the fallback image tag if no tag is set. |
+| `mychart/values.yaml` | Defaults for every environment: image repository and tag, replicas, resources, node selector, tolerations, MySQL settings. |
+| `mychart/templates/deployledger.yml` | The Deployment. Reads replicas, image, resources and scheduling from values with `{{ .Values.... }}`. |
+| `mychart/templates/_helpers.tpl` | Named helpers such as `mychart.fullname` and `mychart.labels`, so names and labels are defined once. |
+| `envs/<env>/values.yaml` | Per-environment overrides: `functional`, `integration`, `regression`, `uat`, `release`. Helm merges these over `mychart/values.yaml`. |
+
+Helm merges values in this order: chart defaults → env file → `--set` flags. The env file wins.
+
+What is parameterised: replicas, image repository and tag, resources, node selector, tolerations and topology spread, the database host domain. What is still hard-coded in the template: container and service ports (8080), probe paths and timings, secret names, the pull secret `awsecr-cred`, and the init container image.
+
+```bash
+helm lint mychart
+helm template test mychart -f envs/uat/values.yaml          # render the YAML locally
+helm template test mychart -f envs/uat/values.yaml | less
+```
+
+### Argo CD
+
+- **ApplicationSet** (`applicationset-ledger.yml`): the git generator creates one Argo CD app per folder in `envs/*`. Each app uses `path: mychart` and loads `../envs/<env>/values.yaml`. The namespace is the env name, and sync is automated (`prune` and `selfHeal`).
+- Argo CD tracks `main`, so only merged changes reach the cluster.
+
+Install and connect (from class):
+
+```bash
+kubectl create namespace argocd
+kubectl apply -n argocd --server-side --force-conflicts -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+kubectl get crd applicationsets.argoproj.io
+kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "NodePort"}}'
+kubectl edit svc argocd-server -n argocd          # set the NodePort to 32000
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d && echo
+
+git clone https://github.com/muntaha747/FinTech-Enterprise-Project-Ledger-Mircoservice-Deployment-Pipeline.git
+cd FinTech-Enterprise-Project-Ledger-Mircoservice-Deployment-Pipeline
+kubectl apply -f applicationset-ledger.yml
+```
+
+Add the GitHub repo credentials in the Argo CD settings before you apply the ApplicationSet.
+
+### Kubernetes basics
+
+- **Pod:** one or more containers that share an IP and storage. A pod does not recreate or scale itself.
+- **Deployment:** manages a ReplicaSet of pods. It gives scale, recreate and rollback. Use it for stateless apps.
+- **StatefulSet:** for stateful apps, such as databases. **DaemonSet:** one pod per worker node, for agents such as logging or monitoring.
+- **Service:** a stable address for a set of pods. ClusterIP inside the cluster, NodePort for 30000–32767, LoadBalancer for cloud load balancers.
+- **ConfigMap:** application configuration files. **Secret:** sensitive data, such as passwords and certificates. A Secret must be 1 MB or less.
+- **Namespace:** groups objects and holds policies (network, resource quota, RBAC).
+
+Pod design checklist:
+
+- Image and start-up command
+- Resources (`requests` and `limits`)
+- Liveness probe (restarts the container when it fails) and readiness probe (stops traffic to the pod when it fails)
+- Environment variables (`env`) and secrets (`secretKeyRef`)
+- Port mapping
+- Volumes and `volumeMounts`
+- Init container (runs before the main container, for example to wait for the database) and sidecar (runs alongside it)
+- `nodeSelector`, `tolerations` (for tainted nodes) and `affinity`
+
+Useful commands:
+
+```bash
+kubectl get pods -o wide
+kubectl describe pod <pod>
+kubectl logs -f <pod> -c <container>
+kubectl exec -it <pod> -- /bin/bash
+kubectl rollout status deploy/<name>
+kubectl rollout history deploy/<name>
+kubectl rollout undo deploy/<name> --to-revision=<n>
+kubectl taint nodes <node> taint=true:NoSchedule
+kubectl label nodes <node> mynode=demonode
+```
+
+### Objects this chart needs in each namespace
+
+The Deployment reads these objects. The repo does not create them, so they must already exist in the target namespace:
+
+- `<release>-mysql-creds` (Secret, keys `username` and `password`)
+- `<release>-mysql-svc` (Service for the MySQL pod, used by the init container)
+- `awsecr-cred` (image pull secret for ECR)
+- `<release>-wezvaledgerapp` (ConfigMap with `application.properties`)
+
+### Environments and promotion
+
+| Env | Branch that feeds it | Image tag source |
+|---|---|---|
+| functional | feature | `fb<N>` |
+| integration | feature | `fb<N>` |
+| regression | main | `rel<N>` |
+| uat | main | `rel<N>` |
+| release | main | `rel<N>` |
+
+The CD workflow (`deploy.yml`) is run by hand with `workflow_dispatch`. It picks the environment, updates that environment's `values.yaml`, and commits to `main`. Argo CD then deploys the change.
+
+### Responsibilities
+
+- Understand the release process: where development happens and where each test runs.
+- Turn the app into a Helm package with environment values.
+- Set up the deployment pipeline and continuous delivery.
