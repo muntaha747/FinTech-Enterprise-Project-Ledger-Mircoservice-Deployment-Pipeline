@@ -54,7 +54,7 @@ jobs:
           cd envs/${{ inputs.TEST }}
 
           echo "Updating image repository..."
-          sed -i "s|repository:.*|repository: ${{ inputs.ECRURL }}${{ env.REPO_NAME }}|g" values.yaml
+          sed -i "s|repository:.*|repository: ${{ inputs.ECRURL }}${{ inputs.REPO }}|g" values.yaml
 
           echo "Updating image tag..."
           sed -i "s|tag:.*|tag: ${{ inputs.IMAGE }}|g" values.yaml
