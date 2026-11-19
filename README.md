@@ -1,5 +1,7 @@
 # 🚀 Ledger Microservice · GitOps Deployment with Argo CD
 
+> **Programming language: Java (Spring Boot).** This is a **Java Spring Boot Microservice** (the deployment side of the Ledger service).
+
 > This repo is the **deployment side** of the Ledger microservice. It holds the **Helm chart**, the **per-environment values**, the **Argo CD ApplicationSet** and the **CD workflow**. Argo CD deploys the Ledger service from this repo to Kubernetes using **GitOps**: Git is the single source of truth, and nothing is changed on the cluster by hand.
 
 ![GitOps overview](docs/diagrams/gitops-overview.svg)
@@ -348,8 +350,8 @@ kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "NodePort"}}'
 kubectl edit svc argocd-server -n argocd          # set the NodePort to 32000
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d && echo
 
-git clone https://github.com/muntaha747/FinTech-Enterprise-Project-Ledger-Mircoservice-Deployment-Pipeline.git
-cd FinTech-Enterprise-Project-Ledger-Mircoservice-Deployment-Pipeline
+git clone https://github.com/muntaha747/FinTech-Ledger-Deployment-MicroService.git
+cd FinTech-Ledger-Deployment-MicroService
 kubectl apply -f applicationset-ledger.yml
 ```
 

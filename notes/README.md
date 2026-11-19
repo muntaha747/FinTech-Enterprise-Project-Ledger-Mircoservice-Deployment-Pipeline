@@ -6,7 +6,7 @@
 
 ![Modules](https://img.shields.io/badge/modules-5-58a6ff?style=for-the-badge) ![Topics](https://img.shields.io/badge/topics-27-a371f7?style=for-the-badge) ![Diagrams](https://img.shields.io/badge/diagrams-41-3fb950?style=for-the-badge)
 
-🎬 **Animated version:** open [`DevOps-Course-Notes-Animated.html`](DevOps-Course-Notes-Animated.html) in a browser (download it, or use [htmlpreview](https://htmlpreview.github.io/?https://github.com/muntaha747/FinTech-Enterprise-Project-Ledger-Mircoservice-Deployment-Pipeline/blob/main/notes/DevOps-Course-Notes-Animated.html)).
+🎬 **Animated version:** open [`DevOps-Course-Notes-Animated.html`](DevOps-Course-Notes-Animated.html) in a browser (download it, or use [htmlpreview](https://htmlpreview.github.io/?https://github.com/muntaha747/FinTech-Ledger-Deployment-MicroService/blob/main/notes/DevOps-Course-Notes-Animated.html)).
 
 </div>
 
