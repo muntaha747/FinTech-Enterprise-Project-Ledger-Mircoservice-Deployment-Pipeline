@@ -350,8 +350,8 @@ kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "NodePort"}}'
 kubectl edit svc argocd-server -n argocd          # set the NodePort to 32000
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d && echo
 
-git clone https://github.com/muntaha747/FinTech-Ledger-Deployment-MicroService.git
-cd FinTech-Ledger-Deployment-MicroService
+git clone https://github.com/muntaha747/FinTech-Ledger-Deployment-MicroService-Project.git
+cd FinTech-Ledger-Deployment-MicroService-Project
 kubectl apply -f applicationset-ledger.yml
 ```
 

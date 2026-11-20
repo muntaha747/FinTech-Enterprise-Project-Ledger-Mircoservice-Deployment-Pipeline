@@ -38,7 +38,7 @@ jobs:
       - name: Checkout Deployment Repo
         uses: actions/checkout@v4
         with:
-          repository: muntaha747/FinTech-Ledger-Deployment-MicroService
+          repository: muntaha747/FinTech-Ledger-Deployment-MicroService-Project
           ref: main
           token: ${{ secrets.GH_PAT }}
 
