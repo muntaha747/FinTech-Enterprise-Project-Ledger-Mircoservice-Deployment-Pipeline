@@ -1,7 +1,7 @@
 wezvaledgerapp:
   wezvaledgerapp:
     image:
-      tag: fb-35-0560b9d4
+      tag: fb-37-8a6cec89
 ledgerSvc:
   ports:
   - nodePort: 30000
