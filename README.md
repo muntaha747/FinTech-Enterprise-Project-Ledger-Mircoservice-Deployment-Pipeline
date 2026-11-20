@@ -1,3 +1,11 @@
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/muntaha747/muntaha747/master/docs/diagrams/architecture-cicd-v14.svg" width="100%" alt="FinTech Enterprise regional architecture with CI/CD: Edge, App, Data and Ops VPCs, plus the pipelines for Ledger, Notification, Payment, Fraud and BFF"/>
+
+<img src="docs/diagrams/ledger-cicd-pipeline.svg" width="100%" alt="Ledger service CI/CD: GitHub Actions DevSecOps CI to Amazon ECR, then GitOps CD with Argo CD to Amazon EKS"/>
+
+</div>
+
 # 🚀 Ledger Microservice · GitOps Deployment with Argo CD
 
 > **Programming language: Java (Spring Boot).** This is a **Java Spring Boot Microservice** (the deployment side of the Ledger service).

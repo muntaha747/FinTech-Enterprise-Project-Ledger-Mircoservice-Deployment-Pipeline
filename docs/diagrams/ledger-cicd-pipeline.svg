@@ -1,0 +1,303 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1180" width="1600" height="1180" role="img" aria-label="FinTech Ledger service CI/CD pipeline: GitHub Actions DevSecOps CI to Amazon ECR, then GitOps CD with Argo CD to Amazon EKS">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#02030a"/><stop offset=".5" stop-color="#05071a"/><stop offset="1" stop-color="#03070f"/></linearGradient>
+<linearGradient id="gradTitle" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e11d48"/><stop offset=".2" stop-color="#f97316"/><stop offset=".4" stop-color="#ffb800"/><stop offset=".6" stop-color="#16a34a"/><stop offset=".8" stop-color="#1d6bff"/><stop offset="1" stop-color="#a21caf"/></linearGradient>
+<linearGradient id="gradEdge" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e11d48"/><stop offset=".17" stop-color="#f97316"/><stop offset=".33" stop-color="#ffb800"/><stop offset=".5" stop-color="#16a34a"/><stop offset=".67" stop-color="#0d9488"/><stop offset=".83" stop-color="#1d6bff"/><stop offset="1" stop-color="#a21caf"/></linearGradient>
+<linearGradient id="gindigo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4338ca"/><stop offset="1" stop-color="#4338ca" stop-opacity=".78"/></linearGradient><linearGradient id="gblue" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1d6bff"/><stop offset="1" stop-color="#1d6bff" stop-opacity=".78"/></linearGradient><linearGradient id="gorange" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f97316"/><stop offset="1" stop-color="#f97316" stop-opacity=".78"/></linearGradient><linearGradient id="gteal" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0d9488"/><stop offset="1" stop-color="#0d9488" stop-opacity=".78"/></linearGradient><linearGradient id="gamber" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffb800"/><stop offset="1" stop-color="#ffb800" stop-opacity=".78"/></linearGradient><linearGradient id="gpink" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#db2777"/><stop offset="1" stop-color="#db2777" stop-opacity=".78"/></linearGradient><linearGradient id="gpurple" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a21caf"/><stop offset="1" stop-color="#a21caf" stop-opacity=".78"/></linearGradient><linearGradient id="gred" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e11d48"/><stop offset="1" stop-color="#e11d48" stop-opacity=".78"/></linearGradient><linearGradient id="ggreen" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#16a34a"/><stop offset="1" stop-color="#16a34a" stop-opacity=".78"/></linearGradient><linearGradient id="gsky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0ea5e9"/><stop offset="1" stop-color="#0ea5e9" stop-opacity=".78"/></linearGradient><linearGradient id="glime" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#84cc16"/><stop offset="1" stop-color="#84cc16" stop-opacity=".78"/></linearGradient>
+<filter id="glow2" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur in="SourceAlpha" stdDeviation="5" result="b"/><feFlood flood-color="#38bdf8" flood-opacity=".45"/><feComposite in2="b" operator="in" result="halo"/><feMerge><feMergeNode in="halo"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur in="SourceAlpha" stdDeviation="4" result="b"/><feFlood flood-color="#22d3ee" flood-opacity=".8"/><feComposite in2="b" operator="in" result="halo"/><feMerge><feMergeNode in="halo"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<style>
+.title { font: 900 46px 'Segoe UI', Arial, sans-serif; fill: url(#gradTitle); }
+.sub { font: 700 19px 'Segoe UI', Arial, sans-serif; fill: #c7d2fe; }
+.vh { font: 900 18px 'Segoe UI', Arial, sans-serif; fill: #000; }
+.vc { font: 800 13px 'Segoe UI', Arial, sans-serif; fill: #000; }
+.ct { font: 900 19px 'Segoe UI', Arial, sans-serif; fill: #000; }
+.cs { font: 800 13.5px 'Segoe UI', Arial, sans-serif; fill: #000; }
+.cts { font: 900 15px 'Segoe UI', Arial, sans-serif; fill: #000; }
+.cs2 { font: 800 11px 'Segoe UI', Arial, sans-serif; fill: #000; }
+.num { font: 900 12px 'Segoe UI', Arial, sans-serif; }
+.t { font: 700 16px 'Segoe UI', Arial, sans-serif; }
+.lbl { font: 900 14px 'Segoe UI', Arial, sans-serif; }
+.foot { font: 800 17px 'Segoe UI', Arial, sans-serif; fill: #c7d2fe; }
+.flow { fill: none; stroke-width: 4; stroke-linecap: round; stroke-dasharray: 10 8; animation: flow .7s linear infinite; }
+.card { transform-box: fill-box; transform-origin: center; animation: pulse 3s ease-in-out infinite; }
+.dashmove { animation: flow 1.4s linear infinite; }
+@keyframes flow { to { stroke-dashoffset: -36; } }
+@keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.03); } }
+@media (prefers-reduced-motion: reduce) { .flow, .card, .dashmove { animation: none; } }
+</style>
+<marker id="arr" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L12,6 L0,12 z" fill="#22d3ee"/></marker>
+</defs>
+<rect width="1600" height="1180" fill="url(#bg)"/>
+<text x="800" y="50" class="title" text-anchor="middle" >FinTech Ledger Service · CI/CD Pipeline</text>
+<text x="800" y="80" class="sub" text-anchor="middle" >Java 17 · Spring Boot · GitHub Actions DevSecOps CI → Amazon ECR → GitOps CD with Argo CD on Amazon EKS</text>
+<rect x="20" y="96" width="1560" height="1040" rx="30" fill="none" stroke="url(#gradEdge)" stroke-width="5" stroke-dasharray="14 8" class="dashmove"/>
+<rect x="40" y="116" width="230" height="420" rx="22" fill="#000" fill-opacity=".97" stroke="#a5b4fc" stroke-width="3.5" filter="url(#glow2)"/>
+<rect x="40" y="116" width="230" height="46" rx="22" fill="url(#gindigo)"/><rect x="40" y="140" width="230" height="22" fill="url(#gindigo)"/>
+<text x="58" y="147" class="vh">TRIGGER</text><text x="252" y="147" text-anchor="end" class="vc">trunk-based</text>
+<g class="card" filter="url(#glow)" style="animation-delay:0.00s"><rect x="58" y="180" width="194" height="70" rx="14" fill="url(#gindigo)" stroke="#a5b4fc" stroke-width="2.5"/></g>
+<text x="155.0" y="213.0" text-anchor="middle" class="ct" style="font-size:19px">feature branch</text>
+<text x="155.0" y="233.0" text-anchor="middle" class="cs" style="font-size:13.5px">git push</text>
+<g class="card" filter="url(#glow)" style="animation-delay:0.30s"><rect x="58" y="290" width="194" height="70" rx="14" fill="url(#gblue)" stroke="#60a5fa" stroke-width="2.5"/></g>
+<text x="155.0" y="323.0" text-anchor="middle" class="ct" style="font-size:19px">Pull Request</text>
+<text x="155.0" y="343.0" text-anchor="middle" class="cs" style="font-size:13.5px">opened · synchronize</text>
+<g class="card" filter="url(#glow)" style="animation-delay:0.60s"><rect x="58" y="400" width="194" height="70" rx="14" fill="url(#gsky)" stroke="#7dd3fc" stroke-width="2.5"/></g>
+<text x="155.0" y="433.0" text-anchor="middle" class="ct" style="font-size:19px">Merge → main</text>
+<text x="155.0" y="453.0" text-anchor="middle" class="cs" style="font-size:13.5px">PR closed + merged</text>
+<path id="p0" class="flow" d="M155,250 L155,290" stroke="#a5b4fc" marker-end="url(#arr)"/>
+<path id="p1" class="flow" d="M155,360 L155,400" stroke="#60a5fa" marker-end="url(#arr)"/>
+<text x="155" y="506" class="lbl" text-anchor="middle" fill="#a5b4fc">or workflow_dispatch</text>
+<rect x="296" y="116" width="1264" height="540" rx="22" fill="#000" fill-opacity=".97" stroke="#60a5fa" stroke-width="3.5" filter="url(#glow2)"/>
+<rect x="296" y="116" width="1264" height="46" rx="22" fill="url(#gblue)"/><rect x="296" y="140" width="1264" height="22" fill="url(#gblue)"/>
+<text x="314" y="147" class="vh">CI · ledgerbuild.yml · job: build</text><text x="1542" y="147" text-anchor="end" class="vc">GitHub Actions · 19 steps</text>
+<g class="card" filter="url(#glow)" style="animation-delay:0.00s"><rect x="322" y="200" width="180" height="84" rx="14" fill="url(#gindigo)" stroke="#a5b4fc" stroke-width="2.5"/></g>
+<circle cx="340" cy="218" r="13" fill="#000" stroke="#a5b4fc" stroke-width="2"/><text x="340" y="223" text-anchor="middle" class="num" fill="#a5b4fc">1</text>
+<text x="422.0" y="240.0" text-anchor="middle" class="ct" style="font-size:17px">Checkout</text>
+<text x="422.0" y="260.0" text-anchor="middle" class="cs" style="font-size:12.5px">actions/checkout@v4</text>
+<g class="card" filter="url(#glow)" style="animation-delay:0.25s"><rect x="528" y="200" width="180" height="84" rx="14" fill="url(#gred)" stroke="#fb7185" stroke-width="2.5"/></g>
+<circle cx="546" cy="218" r="13" fill="#000" stroke="#fb7185" stroke-width="2"/><text x="546" y="223" text-anchor="middle" class="num" fill="#fb7185">2</text>
+<text x="628.0" y="240.0" text-anchor="middle" class="ct" style="font-size:17px">GitLeaks</text>
+<text x="628.0" y="260.0" text-anchor="middle" class="cs" style="font-size:12.5px">secret scan</text>
+<g class="card" filter="url(#glow)" style="animation-delay:0.50s"><rect x="734" y="200" width="180" height="84" rx="14" fill="url(#gblue)" stroke="#60a5fa" stroke-width="2.5"/></g>
+<circle cx="752" cy="218" r="13" fill="#000" stroke="#60a5fa" stroke-width="2"/><text x="752" y="223" text-anchor="middle" class="num" fill="#60a5fa">3</text>
+<text x="834.0" y="240.0" text-anchor="middle" class="ct" style="font-size:17px">Maven Build</text>
+<text x="834.0" y="260.0" text-anchor="middle" class="cs" style="font-size:12.5px">clean verify · JUnit 5</text>
+<g class="card" filter="url(#glow)" style="animation-delay:0.75s"><rect x="940" y="200" width="180" height="84" rx="14" fill="url(#gsky)" stroke="#7dd3fc" stroke-width="2.5"/></g>
+<circle cx="958" cy="218" r="13" fill="#000" stroke="#7dd3fc" stroke-width="2"/><text x="958" y="223" text-anchor="middle" class="num" fill="#7dd3fc">4</text>
+<text x="1040.0" y="240.0" text-anchor="middle" class="ct" style="font-size:17px">Testcontainers</text>
+<text x="1040.0" y="260.0" text-anchor="middle" class="cs" style="font-size:12.5px">real MySQL IT</text>
+<g class="card" filter="url(#glow)" style="animation-delay:1.00s"><rect x="1146" y="200" width="180" height="84" rx="14" fill="url(#ggreen)" stroke="#4ade80" stroke-width="2.5"/></g>
+<circle cx="1164" cy="218" r="13" fill="#000" stroke="#4ade80" stroke-width="2"/><text x="1164" y="223" text-anchor="middle" class="num" fill="#4ade80">5</text>
+<text x="1246.0" y="240.0" text-anchor="middle" class="ct" style="font-size:17px">JaCoCo</text>
+<text x="1246.0" y="260.0" text-anchor="middle" class="cs" style="font-size:12.5px">coverage report</text>
+<g class="card" filter="url(#glow)" style="animation-delay:1.25s"><rect x="1352" y="200" width="180" height="84" rx="14" fill="url(#gorange)" stroke="#fdba74" stroke-width="2.5"/></g>
+<circle cx="1370" cy="218" r="13" fill="#000" stroke="#fdba74" stroke-width="2"/><text x="1370" y="223" text-anchor="middle" class="num" fill="#fdba74">6</text>
+<text x="1452.0" y="240.0" text-anchor="middle" class="ct" style="font-size:17px">Trivy SCA</text>
+<text x="1452.0" y="260.0" text-anchor="middle" class="cs" style="font-size:12.5px">pom.xml CVEs</text>
+<g class="card" filter="url(#glow)" style="animation-delay:1.50s"><rect x="1352" y="380" width="180" height="84" rx="14" fill="url(#gteal)" stroke="#2dd4bf" stroke-width="2.5"/></g>
+<circle cx="1370" cy="398" r="13" fill="#000" stroke="#2dd4bf" stroke-width="2"/><text x="1370" y="403" text-anchor="middle" class="num" fill="#2dd4bf">7</text>
+<text x="1452.0" y="420.0" text-anchor="middle" class="ct" style="font-size:17px">SonarCloud</text>
+<text x="1452.0" y="440.0" text-anchor="middle" class="cs" style="font-size:12.5px">SAST scan</text>
+<g class="card" filter="url(#glow)" style="animation-delay:1.75s"><rect x="1146" y="380" width="180" height="84" rx="14" fill="url(#glime)" stroke="#bef264" stroke-width="2.5"/></g>
+<circle cx="1164" cy="398" r="13" fill="#000" stroke="#bef264" stroke-width="2"/><text x="1164" y="403" text-anchor="middle" class="num" fill="#bef264">8</text>
+<text x="1246.0" y="420.0" text-anchor="middle" class="ct" style="font-size:17px">Quality Gate</text>
+<text x="1246.0" y="440.0" text-anchor="middle" class="cs" style="font-size:12.5px">Sonar + Gitleaks</text>
+<g class="card" filter="url(#glow)" style="animation-delay:2.00s"><rect x="940" y="380" width="180" height="84" rx="14" fill="url(#gsky)" stroke="#7dd3fc" stroke-width="2.5"/></g>
+<circle cx="958" cy="398" r="13" fill="#000" stroke="#7dd3fc" stroke-width="2"/><text x="958" y="403" text-anchor="middle" class="num" fill="#7dd3fc">9</text>
+<text x="1040.0" y="420.0" text-anchor="middle" class="ct" style="font-size:17px">Docker Buildx</text>
+<text x="1040.0" y="440.0" text-anchor="middle" class="cs" style="font-size:12.5px">build image</text>
+<g class="card" filter="url(#glow)" style="animation-delay:2.25s"><rect x="734" y="380" width="180" height="84" rx="14" fill="url(#gorange)" stroke="#fdba74" stroke-width="2.5"/></g>
+<circle cx="752" cy="398" r="13" fill="#000" stroke="#fdba74" stroke-width="2"/><text x="752" y="403" text-anchor="middle" class="num" fill="#fdba74">10</text>
+<text x="834.0" y="420.0" text-anchor="middle" class="ct" style="font-size:17px">Trivy Image</text>
+<text x="834.0" y="440.0" text-anchor="middle" class="cs" style="font-size:12.5px">OS + lib CVEs</text>
+<g class="card" filter="url(#glow)" style="animation-delay:2.50s"><rect x="528" y="380" width="180" height="84" rx="14" fill="url(#gamber)" stroke="#fde047" stroke-width="2.5"/></g>
+<circle cx="546" cy="398" r="13" fill="#000" stroke="#fde047" stroke-width="2"/><text x="546" y="403" text-anchor="middle" class="num" fill="#fde047">11</text>
+<text x="628.0" y="420.0" text-anchor="middle" class="ct" style="font-size:17px">ECR Push</text>
+<text x="628.0" y="440.0" text-anchor="middle" class="cs" style="font-size:12.5px">scan-on-push</text>
+<g class="card" filter="url(#glow)" style="animation-delay:2.75s"><rect x="322" y="380" width="180" height="84" rx="14" fill="url(#gpink)" stroke="#f472b6" stroke-width="2.5"/></g>
+<circle cx="340" cy="398" r="13" fill="#000" stroke="#f472b6" stroke-width="2"/><text x="340" y="403" text-anchor="middle" class="num" fill="#f472b6">12</text>
+<text x="422.0" y="420.0" text-anchor="middle" class="ct" style="font-size:17px">Reports</text>
+<text x="422.0" y="440.0" text-anchor="middle" class="cs" style="font-size:12.5px">upload artifacts</text>
+<path id="p2" class="flow" d="M502,242.0 L528,242.0" stroke="#a5b4fc" marker-end="url(#arr)"/>
+<path id="p3" class="flow" d="M1352,422.0 L1326,422.0" stroke="#2dd4bf" marker-end="url(#arr)"/>
+<path id="p4" class="flow" d="M708,242.0 L734,242.0" stroke="#fb7185" marker-end="url(#arr)"/>
+<path id="p5" class="flow" d="M1146,422.0 L1120,422.0" stroke="#bef264" marker-end="url(#arr)"/>
+<path id="p6" class="flow" d="M914,242.0 L940,242.0" stroke="#60a5fa" marker-end="url(#arr)"/>
+<path id="p7" class="flow" d="M940,422.0 L914,422.0" stroke="#7dd3fc" marker-end="url(#arr)"/>
+<path id="p8" class="flow" d="M1120,242.0 L1146,242.0" stroke="#7dd3fc" marker-end="url(#arr)"/>
+<path id="p9" class="flow" d="M734,422.0 L708,422.0" stroke="#fdba74" marker-end="url(#arr)"/>
+<path id="p10" class="flow" d="M1326,242.0 L1352,242.0" stroke="#4ade80" marker-end="url(#arr)"/>
+<path id="p11" class="flow" d="M528,422.0 L502,422.0" stroke="#fde047" marker-end="url(#arr)"/>
+<path id="p12" class="flow" d="M1532,242.0 C1572,242.0 1572,422.0 1532,422.0" stroke="#fdba74" marker-end="url(#arr)"/>
+<path id="p13" class="flow" d="M252,325 C285,325 285,242 322,242" stroke="#60a5fa" marker-end="url(#arr)"/>
+<text x="824.0" y="310" class="lbl" text-anchor="middle" fill="#93c5fd">unit + integration tests</text>
+<text x="1342" y="340" class="lbl" text-anchor="middle" fill="#fdba74">shift-left security: secrets → deps → code → image</text>
+<text x="824.0" y="490" class="lbl" text-anchor="middle" fill="#fb7185">gate: fails on fixable CRITICAL</text>
+<text x="1236.0" y="490" class="lbl" text-anchor="middle" fill="#bef264">gate: blocks the build on failure</text>
+<rect x="322" y="514" width="290" height="34" rx="17" fill="#000" stroke="#a5b4fc" stroke-width="2"/>
+<text x="467.0" y="537" class="lbl" text-anchor="middle" fill="#a5b4fc">OIDC / IAM role</text>
+<rect x="634" y="514" width="290" height="34" rx="17" fill="#000" stroke="#fde047" stroke-width="2"/>
+<text x="779.0" y="537" class="lbl" text-anchor="middle" fill="#fde047">immutable tag: sha + run</text>
+<rect x="946" y="514" width="290" height="34" rx="17" fill="#000" stroke="#fdba74" stroke-width="2"/>
+<text x="1091.0" y="537" class="lbl" text-anchor="middle" fill="#fdba74">ECR repo: fintech-ledgerservice</text>
+<rect x="1258" y="514" width="290" height="34" rx="17" fill="#000" stroke="#4ade80" stroke-width="2"/>
+<text x="1403.0" y="537" class="lbl" text-anchor="middle" fill="#4ade80">SARIF + JaCoCo artifacts</text>
+<rect x="40" y="680" width="520" height="430" rx="22" fill="#000" fill-opacity=".97" stroke="#f472b6" stroke-width="3.5" filter="url(#glow2)"/>
+<rect x="40" y="680" width="520" height="46" rx="22" fill="url(#gpink)"/><rect x="40" y="704" width="520" height="22" fill="url(#gpink)"/>
+<text x="58" y="711" class="vh">HANDOFF · job: deployment</text><text x="542" y="711" text-anchor="end" class="vc">GitHub API + PAT</text>
+<g class="card" filter="url(#glow)" style="animation-delay:3.00s"><rect x="70" y="740" width="460" height="80" rx="14" fill="url(#gpink)" stroke="#f472b6" stroke-width="2.5"/></g>
+<text x="300.0" y="778.0" text-anchor="middle" class="ct" style="font-size:19px">CD dispatch → deploy.yml</text>
+<text x="300.0" y="798.0" text-anchor="middle" class="cs" style="font-size:13.5px">ECRURL · REPO · IMAGE tag · TEST env</text>
+<rect x="300" y="860" width="230" height="36" rx="18" fill="url(#gsky)" stroke="#7dd3fc" stroke-width="2" class="card" style="animation-delay:3.0s"/>
+<text x="320" y="884" class="cts" text-anchor="start" >functional</text>
+<text x="515" y="884" class="cs2" text-anchor="end" >on PR</text>
+<path id="p14" class="flow" d="M200,820 L200,878 L300,878" stroke="#7dd3fc" marker-end="url(#arr)"/>
+<rect x="300" y="906" width="230" height="36" rx="18" fill="url(#gteal)" stroke="#2dd4bf" stroke-width="2" class="card" style="animation-delay:3.2s"/>
+<text x="320" y="930" class="cts" text-anchor="start" >regression</text>
+<text x="515" y="930" class="cs2" text-anchor="end" >on merge</text>
+<path id="p15" class="flow" d="M200,820 L200,924 L300,924" stroke="#2dd4bf" marker-end="url(#arr)"/>
+<rect x="300" y="952" width="230" height="36" rx="18" fill="url(#ggreen)" stroke="#4ade80" stroke-width="2" class="card" style="animation-delay:3.4s"/>
+<text x="320" y="976" class="cts" text-anchor="start" >integration</text>
+<text x="515" y="976" class="cs2" text-anchor="end" >on merge</text>
+<path id="p16" class="flow" d="M200,820 L200,970 L300,970" stroke="#4ade80" marker-end="url(#arr)"/>
+<rect x="300" y="998" width="230" height="36" rx="18" fill="url(#gamber)" stroke="#fde047" stroke-width="2" class="card" style="animation-delay:3.6s"/>
+<text x="320" y="1022" class="cts" text-anchor="start" >uat</text>
+<text x="515" y="1022" class="cs2" text-anchor="end" >manual</text>
+<path id="p17" class="flow" d="M200,820 L200,1016 L300,1016" stroke="#fde047" marker-end="url(#arr)"/>
+<rect x="300" y="1044" width="230" height="36" rx="18" fill="url(#gred)" stroke="#fb7185" stroke-width="2" class="card" style="animation-delay:3.8s"/>
+<text x="320" y="1068" class="cts" text-anchor="start" >release</text>
+<text x="515" y="1068" class="cs2" text-anchor="end" >manual</text>
+<path id="p18" class="flow" d="M200,820 L200,1062 L300,1062" stroke="#fb7185" marker-end="url(#arr)"/>
+<text x="56" y="1000" class="lbl" text-anchor="start" fill="#f9a8d4">one dispatch</text>
+<text x="56" y="1022" class="lbl" text-anchor="start" fill="#f9a8d4">per environment</text>
+<path id="p19" class="flow" d="M618.0,464 L618.0,610 L380,610 L380,740" stroke="#fde047" marker-end="url(#arr)"/>
+<rect x="586" y="680" width="974" height="430" rx="22" fill="#000" fill-opacity=".97" stroke="#e879f9" stroke-width="3.5" filter="url(#glow2)"/>
+<rect x="586" y="680" width="974" height="46" rx="22" fill="url(#gpurple)"/><rect x="586" y="704" width="974" height="22" fill="url(#gpurple)"/>
+<text x="604" y="711" class="vh">CD · FinTech-Ledger-CD-Microservice-Project</text><text x="1542" y="711" text-anchor="end" class="vc">GitOps · Git = source of truth</text>
+<g class="card" filter="url(#glow)" style="animation-delay:3.50s"><rect x="612" y="740" width="210" height="84" rx="14" fill="url(#gpink)" stroke="#f472b6" stroke-width="2.5"/></g>
+<circle cx="630" cy="758" r="13" fill="#000" stroke="#f472b6" stroke-width="2"/><text x="630" y="763" text-anchor="middle" class="num" fill="#f472b6">C1</text>
+<text x="727.0" y="780.0" text-anchor="middle" class="ct" style="font-size:17px">deploy.yml</text>
+<text x="727.0" y="800.0" text-anchor="middle" class="cs" style="font-size:12px">checkout CD repo</text>
+<g class="card" filter="url(#glow)" style="animation-delay:3.75s"><rect x="848" y="740" width="210" height="84" rx="14" fill="url(#gamber)" stroke="#fde047" stroke-width="2.5"/></g>
+<circle cx="866" cy="758" r="13" fill="#000" stroke="#fde047" stroke-width="2"/><text x="866" y="763" text-anchor="middle" class="num" fill="#fde047">C2</text>
+<text x="963.0" y="780.0" text-anchor="middle" class="ct" style="font-size:17px">Update values</text>
+<text x="963.0" y="800.0" text-anchor="middle" class="cs" style="font-size:12px">sed image repo + tag</text>
+<g class="card" filter="url(#glow)" style="animation-delay:4.00s"><rect x="1084" y="740" width="210" height="84" rx="14" fill="url(#ggreen)" stroke="#4ade80" stroke-width="2.5"/></g>
+<circle cx="1102" cy="758" r="13" fill="#000" stroke="#4ade80" stroke-width="2"/><text x="1102" y="763" text-anchor="middle" class="num" fill="#4ade80">C3</text>
+<text x="1199.0" y="780.0" text-anchor="middle" class="ct" style="font-size:17px">git commit + push</text>
+<text x="1199.0" y="800.0" text-anchor="middle" class="cs" style="font-size:12px">envs/&lt;env&gt;/values.yaml</text>
+<g class="card" filter="url(#glow)" style="animation-delay:4.25s"><rect x="1320" y="740" width="210" height="84" rx="14" fill="url(#gpurple)" stroke="#e879f9" stroke-width="2.5"/></g>
+<circle cx="1338" cy="758" r="13" fill="#000" stroke="#e879f9" stroke-width="2"/><text x="1338" y="763" text-anchor="middle" class="num" fill="#e879f9">C4</text>
+<text x="1435.0" y="780.0" text-anchor="middle" class="ct" style="font-size:17px">Argo CD</text>
+<text x="1435.0" y="800.0" text-anchor="middle" class="cs" style="font-size:12px">ApplicationSet watches Git</text>
+<path id="p20" class="flow" d="M822,782 L848,782" stroke="#f472b6" marker-end="url(#arr)"/>
+<path id="p21" class="flow" d="M1058,782 L1084,782" stroke="#fde047" marker-end="url(#arr)"/>
+<path id="p22" class="flow" d="M1294,782 L1320,782" stroke="#4ade80" marker-end="url(#arr)"/>
+<path id="p23" class="flow" d="M530,780 L612,780" stroke="#f472b6" marker-end="url(#arr)"/>
+<rect x="612" y="870" width="922" height="220" rx="18" fill="#000" stroke="#4ade80" stroke-width="2.5" stroke-dasharray="8 6" class="dashmove"/>
+<text x="632" y="1080" class="lbl" text-anchor="start" fill="#4ade80">Amazon EKS · one namespace per environment</text>
+<g class="card" filter="url(#glow)" style="animation-delay:4.50s"><rect x="632" y="914" width="164" height="72" rx="14" fill="url(#gsky)" stroke="#7dd3fc" stroke-width="2.5"/></g>
+<text x="714.0" y="948.0" text-anchor="middle" class="ct" style="font-size:17px">functional</text>
+<text x="714.0" y="968.0" text-anchor="middle" class="cs" style="font-size:12px">Helm · mychart</text>
+<rect x="652" y="1000" width="36" height="28" rx="7" fill="#000" stroke="#7dd3fc" stroke-width="2" class="card" style="animation-delay:5.0s"/>
+<text x="670" y="1019" text-anchor="middle" class="cs2" style="fill:#7dd3fc">pod</text>
+<rect x="696" y="1000" width="36" height="28" rx="7" fill="#000" stroke="#7dd3fc" stroke-width="2" class="card" style="animation-delay:5.3s"/>
+<text x="714" y="1019" text-anchor="middle" class="cs2" style="fill:#7dd3fc">pod</text>
+<rect x="740" y="1000" width="36" height="28" rx="7" fill="#000" stroke="#7dd3fc" stroke-width="2" class="card" style="animation-delay:5.6s"/>
+<text x="758" y="1019" text-anchor="middle" class="cs2" style="fill:#7dd3fc">pod</text>
+<path id="p24" class="flow" d="M1425,824 L1425,850 L714,850 L714,914" stroke="#e879f9" marker-end="url(#arr)"/>
+<g class="card" filter="url(#glow)" style="animation-delay:4.70s"><rect x="812" y="914" width="164" height="72" rx="14" fill="url(#gteal)" stroke="#2dd4bf" stroke-width="2.5"/></g>
+<text x="894.0" y="948.0" text-anchor="middle" class="ct" style="font-size:17px">regression</text>
+<text x="894.0" y="968.0" text-anchor="middle" class="cs" style="font-size:12px">Helm · mychart</text>
+<rect x="832" y="1000" width="36" height="28" rx="7" fill="#000" stroke="#2dd4bf" stroke-width="2" class="card" style="animation-delay:5.0s"/>
+<text x="850" y="1019" text-anchor="middle" class="cs2" style="fill:#2dd4bf">pod</text>
+<rect x="876" y="1000" width="36" height="28" rx="7" fill="#000" stroke="#2dd4bf" stroke-width="2" class="card" style="animation-delay:5.3s"/>
+<text x="894" y="1019" text-anchor="middle" class="cs2" style="fill:#2dd4bf">pod</text>
+<rect x="920" y="1000" width="36" height="28" rx="7" fill="#000" stroke="#2dd4bf" stroke-width="2" class="card" style="animation-delay:5.6s"/>
+<text x="938" y="1019" text-anchor="middle" class="cs2" style="fill:#2dd4bf">pod</text>
+<path id="p25" class="flow" d="M1425,824 L1425,850 L894,850 L894,914" stroke="#e879f9" marker-end="url(#arr)"/>
+<g class="card" filter="url(#glow)" style="animation-delay:4.90s"><rect x="992" y="914" width="164" height="72" rx="14" fill="url(#ggreen)" stroke="#4ade80" stroke-width="2.5"/></g>
+<text x="1074.0" y="948.0" text-anchor="middle" class="ct" style="font-size:17px">integration</text>
+<text x="1074.0" y="968.0" text-anchor="middle" class="cs" style="font-size:12px">Helm · mychart</text>
+<rect x="1012" y="1000" width="36" height="28" rx="7" fill="#000" stroke="#4ade80" stroke-width="2" class="card" style="animation-delay:5.0s"/>
+<text x="1030" y="1019" text-anchor="middle" class="cs2" style="fill:#4ade80">pod</text>
+<rect x="1056" y="1000" width="36" height="28" rx="7" fill="#000" stroke="#4ade80" stroke-width="2" class="card" style="animation-delay:5.3s"/>
+<text x="1074" y="1019" text-anchor="middle" class="cs2" style="fill:#4ade80">pod</text>
+<rect x="1100" y="1000" width="36" height="28" rx="7" fill="#000" stroke="#4ade80" stroke-width="2" class="card" style="animation-delay:5.6s"/>
+<text x="1118" y="1019" text-anchor="middle" class="cs2" style="fill:#4ade80">pod</text>
+<path id="p26" class="flow" d="M1425,824 L1425,850 L1074,850 L1074,914" stroke="#e879f9" marker-end="url(#arr)"/>
+<g class="card" filter="url(#glow)" style="animation-delay:5.10s"><rect x="1172" y="914" width="164" height="72" rx="14" fill="url(#gamber)" stroke="#fde047" stroke-width="2.5"/></g>
+<text x="1254.0" y="948.0" text-anchor="middle" class="ct" style="font-size:17px">uat</text>
+<text x="1254.0" y="968.0" text-anchor="middle" class="cs" style="font-size:12px">Helm · mychart</text>
+<rect x="1192" y="1000" width="36" height="28" rx="7" fill="#000" stroke="#fde047" stroke-width="2" class="card" style="animation-delay:5.0s"/>
+<text x="1210" y="1019" text-anchor="middle" class="cs2" style="fill:#fde047">pod</text>
+<rect x="1236" y="1000" width="36" height="28" rx="7" fill="#000" stroke="#fde047" stroke-width="2" class="card" style="animation-delay:5.3s"/>
+<text x="1254" y="1019" text-anchor="middle" class="cs2" style="fill:#fde047">pod</text>
+<rect x="1280" y="1000" width="36" height="28" rx="7" fill="#000" stroke="#fde047" stroke-width="2" class="card" style="animation-delay:5.6s"/>
+<text x="1298" y="1019" text-anchor="middle" class="cs2" style="fill:#fde047">pod</text>
+<path id="p27" class="flow" d="M1425,824 L1425,850 L1254,850 L1254,914" stroke="#e879f9" marker-end="url(#arr)"/>
+<g class="card" filter="url(#glow)" style="animation-delay:5.30s"><rect x="1352" y="914" width="164" height="72" rx="14" fill="url(#gred)" stroke="#fb7185" stroke-width="2.5"/></g>
+<text x="1434.0" y="948.0" text-anchor="middle" class="ct" style="font-size:17px">release</text>
+<text x="1434.0" y="968.0" text-anchor="middle" class="cs" style="font-size:12px">Helm · mychart</text>
+<rect x="1372" y="1000" width="36" height="28" rx="7" fill="#000" stroke="#fb7185" stroke-width="2" class="card" style="animation-delay:5.0s"/>
+<text x="1390" y="1019" text-anchor="middle" class="cs2" style="fill:#fb7185">pod</text>
+<rect x="1416" y="1000" width="36" height="28" rx="7" fill="#000" stroke="#fb7185" stroke-width="2" class="card" style="animation-delay:5.3s"/>
+<text x="1434" y="1019" text-anchor="middle" class="cs2" style="fill:#fb7185">pod</text>
+<rect x="1460" y="1000" width="36" height="28" rx="7" fill="#000" stroke="#fb7185" stroke-width="2" class="card" style="animation-delay:5.6s"/>
+<text x="1478" y="1019" text-anchor="middle" class="cs2" style="fill:#fb7185">pod</text>
+<path id="p28" class="flow" d="M1425,824 L1425,850 L1434,850 L1434,914" stroke="#e879f9" marker-end="url(#arr)"/>
+<text x="1516" y="1080" class="lbl" text-anchor="end" fill="#e879f9">auto-sync · self-heal · prune · rollback = git revert</text>
+<text x="800" y="1162" class="foot" text-anchor="middle" >Push → scan → build → push to ECR → dispatch → commit to Git → Argo CD syncs to EKS · no kubectl by hand, every change is in Git</text>
+<circle r="7" fill="#a5b4fc" opacity="1" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="0.00s"><mpath href="#p0"/></animateMotion></circle>
+<circle r="5" fill="#a5b4fc" opacity="0.6" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="-0.15s"><mpath href="#p0"/></animateMotion></circle>
+<circle r="3" fill="#a5b4fc" opacity="0.35" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="-0.30s"><mpath href="#p0"/></animateMotion></circle>
+<circle r="7" fill="#60a5fa" opacity="1" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="0.00s"><mpath href="#p1"/></animateMotion></circle>
+<circle r="5" fill="#60a5fa" opacity="0.6" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="-0.15s"><mpath href="#p1"/></animateMotion></circle>
+<circle r="3" fill="#60a5fa" opacity="0.35" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="-0.30s"><mpath href="#p1"/></animateMotion></circle>
+<circle r="7" fill="#a5b4fc" opacity="1" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="0.00s"><mpath href="#p2"/></animateMotion></circle>
+<circle r="5" fill="#a5b4fc" opacity="0.6" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="-0.15s"><mpath href="#p2"/></animateMotion></circle>
+<circle r="3" fill="#a5b4fc" opacity="0.35" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="-0.30s"><mpath href="#p2"/></animateMotion></circle>
+<circle r="7" fill="#2dd4bf" opacity="1" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="0.00s"><mpath href="#p3"/></animateMotion></circle>
+<circle r="5" fill="#2dd4bf" opacity="0.6" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="-0.15s"><mpath href="#p3"/></animateMotion></circle>
+<circle r="3" fill="#2dd4bf" opacity="0.35" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="-0.30s"><mpath href="#p3"/></animateMotion></circle>
+<circle r="7" fill="#fb7185" opacity="1" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="0.00s"><mpath href="#p4"/></animateMotion></circle>
+<circle r="5" fill="#fb7185" opacity="0.6" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="-0.15s"><mpath href="#p4"/></animateMotion></circle>
+<circle r="3" fill="#fb7185" opacity="0.35" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="-0.30s"><mpath href="#p4"/></animateMotion></circle>
+<circle r="7" fill="#bef264" opacity="1" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="0.00s"><mpath href="#p5"/></animateMotion></circle>
+<circle r="5" fill="#bef264" opacity="0.6" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="-0.15s"><mpath href="#p5"/></animateMotion></circle>
+<circle r="3" fill="#bef264" opacity="0.35" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="-0.30s"><mpath href="#p5"/></animateMotion></circle>
+<circle r="7" fill="#60a5fa" opacity="1" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="0.00s"><mpath href="#p6"/></animateMotion></circle>
+<circle r="5" fill="#60a5fa" opacity="0.6" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="-0.15s"><mpath href="#p6"/></animateMotion></circle>
+<circle r="3" fill="#60a5fa" opacity="0.35" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="-0.30s"><mpath href="#p6"/></animateMotion></circle>
+<circle r="7" fill="#7dd3fc" opacity="1" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="0.00s"><mpath href="#p7"/></animateMotion></circle>
+<circle r="5" fill="#7dd3fc" opacity="0.6" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="-0.15s"><mpath href="#p7"/></animateMotion></circle>
+<circle r="3" fill="#7dd3fc" opacity="0.35" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="-0.30s"><mpath href="#p7"/></animateMotion></circle>
+<circle r="7" fill="#7dd3fc" opacity="1" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="0.00s"><mpath href="#p8"/></animateMotion></circle>
+<circle r="5" fill="#7dd3fc" opacity="0.6" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="-0.15s"><mpath href="#p8"/></animateMotion></circle>
+<circle r="3" fill="#7dd3fc" opacity="0.35" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="-0.30s"><mpath href="#p8"/></animateMotion></circle>
+<circle r="7" fill="#fdba74" opacity="1" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="0.00s"><mpath href="#p9"/></animateMotion></circle>
+<circle r="5" fill="#fdba74" opacity="0.6" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="-0.15s"><mpath href="#p9"/></animateMotion></circle>
+<circle r="3" fill="#fdba74" opacity="0.35" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="-0.30s"><mpath href="#p9"/></animateMotion></circle>
+<circle r="7" fill="#4ade80" opacity="1" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="0.00s"><mpath href="#p10"/></animateMotion></circle>
+<circle r="5" fill="#4ade80" opacity="0.6" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="-0.15s"><mpath href="#p10"/></animateMotion></circle>
+<circle r="3" fill="#4ade80" opacity="0.35" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="-0.30s"><mpath href="#p10"/></animateMotion></circle>
+<circle r="7" fill="#fde047" opacity="1" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="0.00s"><mpath href="#p11"/></animateMotion></circle>
+<circle r="5" fill="#fde047" opacity="0.6" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="-0.15s"><mpath href="#p11"/></animateMotion></circle>
+<circle r="3" fill="#fde047" opacity="0.35" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="-0.30s"><mpath href="#p11"/></animateMotion></circle>
+<circle r="7" fill="#fdba74" opacity="1" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="0.00s"><mpath href="#p12"/></animateMotion></circle>
+<circle r="5" fill="#fdba74" opacity="0.6" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="-0.15s"><mpath href="#p12"/></animateMotion></circle>
+<circle r="3" fill="#fdba74" opacity="0.35" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="-0.30s"><mpath href="#p12"/></animateMotion></circle>
+<circle r="7" fill="#60a5fa" opacity="1" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="0.00s"><mpath href="#p13"/></animateMotion></circle>
+<circle r="5" fill="#60a5fa" opacity="0.6" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="-0.15s"><mpath href="#p13"/></animateMotion></circle>
+<circle r="3" fill="#60a5fa" opacity="0.35" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="-0.30s"><mpath href="#p13"/></animateMotion></circle>
+<circle r="7" fill="#7dd3fc" opacity="1" filter="url(#glow)"><animateMotion dur="2.2s" repeatCount="indefinite" begin="0.00s"><mpath href="#p14"/></animateMotion></circle>
+<circle r="5" fill="#7dd3fc" opacity="0.6" filter="url(#glow)"><animateMotion dur="2.2s" repeatCount="indefinite" begin="-0.15s"><mpath href="#p14"/></animateMotion></circle>
+<circle r="3" fill="#7dd3fc" opacity="0.35" filter="url(#glow)"><animateMotion dur="2.2s" repeatCount="indefinite" begin="-0.30s"><mpath href="#p14"/></animateMotion></circle>
+<circle r="7" fill="#4ade80" opacity="1" filter="url(#glow)"><animateMotion dur="2.2s" repeatCount="indefinite" begin="0.00s"><mpath href="#p16"/></animateMotion></circle>
+<circle r="5" fill="#4ade80" opacity="0.6" filter="url(#glow)"><animateMotion dur="2.2s" repeatCount="indefinite" begin="-0.15s"><mpath href="#p16"/></animateMotion></circle>
+<circle r="3" fill="#4ade80" opacity="0.35" filter="url(#glow)"><animateMotion dur="2.2s" repeatCount="indefinite" begin="-0.30s"><mpath href="#p16"/></animateMotion></circle>
+<circle r="7" fill="#fde047" opacity="1" filter="url(#glow)"><animateMotion dur="2.4s" repeatCount="indefinite" begin="0.00s"><mpath href="#p19"/></animateMotion></circle>
+<circle r="5" fill="#fde047" opacity="0.6" filter="url(#glow)"><animateMotion dur="2.4s" repeatCount="indefinite" begin="-0.15s"><mpath href="#p19"/></animateMotion></circle>
+<circle r="3" fill="#fde047" opacity="0.35" filter="url(#glow)"><animateMotion dur="2.4s" repeatCount="indefinite" begin="-0.30s"><mpath href="#p19"/></animateMotion></circle>
+<circle r="7" fill="#f472b6" opacity="1" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="0.00s"><mpath href="#p20"/></animateMotion></circle>
+<circle r="5" fill="#f472b6" opacity="0.6" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="-0.15s"><mpath href="#p20"/></animateMotion></circle>
+<circle r="3" fill="#f472b6" opacity="0.35" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="-0.30s"><mpath href="#p20"/></animateMotion></circle>
+<circle r="7" fill="#fde047" opacity="1" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="0.00s"><mpath href="#p21"/></animateMotion></circle>
+<circle r="5" fill="#fde047" opacity="0.6" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="-0.15s"><mpath href="#p21"/></animateMotion></circle>
+<circle r="3" fill="#fde047" opacity="0.35" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="-0.30s"><mpath href="#p21"/></animateMotion></circle>
+<circle r="7" fill="#4ade80" opacity="1" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="0.00s"><mpath href="#p22"/></animateMotion></circle>
+<circle r="5" fill="#4ade80" opacity="0.6" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="-0.15s"><mpath href="#p22"/></animateMotion></circle>
+<circle r="3" fill="#4ade80" opacity="0.35" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="-0.30s"><mpath href="#p22"/></animateMotion></circle>
+<circle r="7" fill="#f472b6" opacity="1" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="0.00s"><mpath href="#p23"/></animateMotion></circle>
+<circle r="5" fill="#f472b6" opacity="0.6" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="-0.15s"><mpath href="#p23"/></animateMotion></circle>
+<circle r="3" fill="#f472b6" opacity="0.35" filter="url(#glow)"><animateMotion dur="1.6s" repeatCount="indefinite" begin="-0.30s"><mpath href="#p23"/></animateMotion></circle>
+<circle r="7" fill="#e879f9" opacity="1" filter="url(#glow)"><animateMotion dur="2.0s" repeatCount="indefinite" begin="0.00s"><mpath href="#p24"/></animateMotion></circle>
+<circle r="5" fill="#e879f9" opacity="0.6" filter="url(#glow)"><animateMotion dur="2.0s" repeatCount="indefinite" begin="-0.15s"><mpath href="#p24"/></animateMotion></circle>
+<circle r="3" fill="#e879f9" opacity="0.35" filter="url(#glow)"><animateMotion dur="2.0s" repeatCount="indefinite" begin="-0.30s"><mpath href="#p24"/></animateMotion></circle>
+<circle r="7" fill="#e879f9" opacity="1" filter="url(#glow)"><animateMotion dur="2.0s" repeatCount="indefinite" begin="0.00s"><mpath href="#p26"/></animateMotion></circle>
+<circle r="5" fill="#e879f9" opacity="0.6" filter="url(#glow)"><animateMotion dur="2.0s" repeatCount="indefinite" begin="-0.15s"><mpath href="#p26"/></animateMotion></circle>
+<circle r="3" fill="#e879f9" opacity="0.35" filter="url(#glow)"><animateMotion dur="2.0s" repeatCount="indefinite" begin="-0.30s"><mpath href="#p26"/></animateMotion></circle>
+<circle r="7" fill="#e879f9" opacity="1" filter="url(#glow)"><animateMotion dur="2.0s" repeatCount="indefinite" begin="0.00s"><mpath href="#p28"/></animateMotion></circle>
+<circle r="5" fill="#e879f9" opacity="0.6" filter="url(#glow)"><animateMotion dur="2.0s" repeatCount="indefinite" begin="-0.15s"><mpath href="#p28"/></animateMotion></circle>
+<circle r="3" fill="#e879f9" opacity="0.35" filter="url(#glow)"><animateMotion dur="2.0s" repeatCount="indefinite" begin="-0.30s"><mpath href="#p28"/></animateMotion></circle>
+</svg>
