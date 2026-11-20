@@ -34,8 +34,8 @@ aws configure
 
 3. CLONE AND CHECK THE CHART
 ----------------------------
-git clone https://github.com/muntaha747/FinTech-Ledger-Deployment-MicroService-Project.git
-cd FinTech-Ledger-Deployment-MicroService-Project
+git clone https://github.com/muntaha747/FinTech-Ledger-CD-Microservice-Project.git
+cd FinTech-Ledger-CD-Microservice-Project
 helm lint mychart
 helm template test mychart -f envs/uat/values.yaml        # render the YAML locally
 helm template test mychart -f envs/uat/values.yaml | less

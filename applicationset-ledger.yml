@@ -6,7 +6,7 @@ metadata:
 spec:
   generators:
   - git:
-      repoURL: https://github.com/muntaha747/FinTech-Ledger-Deployment-MicroService-Project.git
+      repoURL: https://github.com/muntaha747/FinTech-Ledger-CD-Microservice-Project.git
       revision: HEAD
       directories:
       - path: envs/*
@@ -16,7 +16,7 @@ spec:
     spec:
       project: default
       source:
-        repoURL: https://github.com/muntaha747/FinTech-Ledger-Deployment-MicroService-Project.git
+        repoURL: https://github.com/muntaha747/FinTech-Ledger-CD-Microservice-Project.git
         targetRevision: main
         path: mychart
         helm:
